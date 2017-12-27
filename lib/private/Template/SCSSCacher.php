@@ -165,7 +165,7 @@ class SCSSCacher {
 					}
 				}
 			}
-			return false;
+			return true;
 		} catch(NotFoundException $e) {
 			return false;
 		}
@@ -304,7 +304,6 @@ class SCSSCacher {
 	 * @return string
 	 */
 	public function getCachedSCSS($appName, $fileName) {
-		//var_dump([$appName, $fileName]);
 		$tmpfileLoc = explode('/', $fileName);
 		$fileName = array_pop($tmpfileLoc);
 		$fileName = $this->prependBaseurlPrefix(str_replace('.scss', '.css', $fileName));
